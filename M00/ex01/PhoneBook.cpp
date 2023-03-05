@@ -6,29 +6,35 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 20:46:25 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/04 21:07:46 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:16:29 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
 
+PhoneBook::PhoneBook()
+{
+    _freeSpot = 0;
+    _current_Contact = 0;
+}
+
 void PhoneBook::add_contact()
 {
     Contact new_contact;
-    if (Free_Spot == 8)
-        Free_Spot = 0;
+    if (_freeSpot == 8)
+        _freeSpot = 0;
     new_contact.fill();
-    contact[Free_Spot] = new_contact;
-    Free_Spot++;
-    if (current_contact < 8)
-        current_contact++;
+    contact[_freeSpot] = new_contact;
+    _freeSpot++;
+    if (_current_Contact < 8)
+        _current_Contact++;
     return;
 }
 void PhoneBook::display_contact()
 {
     int index = -1;
     std::string user_input;
-    while (++index < current_contact)
+    while (++index < _current_Contact)
         contact[index].display(index + 1);
     if (index == 0)
     {
@@ -47,7 +53,7 @@ void PhoneBook::display_contact()
         {
             index = 0;
         }
-        if (index > 0 && index < current_contact + 1)
+        if (index > 0 && index < _current_Contact + 1)
         {
             contact[index - 1].display_info();
             return;

@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/04 16:02:13 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/04 19:36:53 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/05 15:55:04 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,7 +119,21 @@ void Account::displayStatus(void) const
 
 void    Account::_displayTimestamp(void)
 {
+    std::stringstream time_stamp;
     std::time_t t = std::time(nullptr);
     std::tm tm = *std::localtime(&t);
-    std::cout << std::put_time(&tm, "%F_%T") << " ";
+    time_stamp << std::put_time(&tm, "[%F_%T]");
+    std::string current_time = time_stamp.str();
+    int i = 0;
+    while (current_time[i])
+    {
+        if (current_time[i] == '-' || current_time[i] == ':')
+        {
+            current_time.erase(i, 1);
+            i--;
+            continue;
+        }
+        i++;
+    }
+    std::cout << current_time << " ";
 }

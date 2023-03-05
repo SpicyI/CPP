@@ -1,29 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Zombie.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 18:18:32 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/05 15:09:45 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/05 22:52:39 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/05 23:26:45 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "Contact.hpp"
-#include <stdio.h>
+#include "Zombie.hpp"
 
-class PhoneBook
+Zombie::Zombie(const std::string name)
 {
+    this->_name = name;
+}
 
-private:
-    Contact contact[8];
-    int _freeSpot;
-    int _current_Contact;
-
-public:
-    PhoneBook();
-    void add_contact();
-    void display_contact();
-};
+Zombie::~Zombie()
+{
+    std::cout << this->_name << ": has been slain" << std ::endl;
+}
+void Zombie::annonce (void)
+{
+    std::cout << _name << ": BraiiiiiiinnnzzzZ..." << std::endl;
+    return ;
+}

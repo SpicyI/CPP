@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   randomChump.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 18:18:32 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/05 15:09:45 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/05 23:03:01 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/05 23:22:11 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "Contact.hpp"
-#include <stdio.h>
+#include "Zombie.hpp"
 
-class PhoneBook
-{
-
-private:
-    Contact contact[8];
-    int _freeSpot;
-    int _current_Contact;
-
-public:
-    PhoneBook();
-    void add_contact();
-    void display_contact();
-};
+void randomChump(std::string name)
+{ 
+    Zombie randomZombie(name);
+    randomZombie.annonce();
+}

@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   newZombie.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/02 18:18:32 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/05 15:09:45 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/05 23:02:40 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/05 23:22:30 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
-#include "Contact.hpp"
-#include <stdio.h>
+#include "Zombie.hpp"
 
-class PhoneBook
+Zombie* newZombie( std::string name )
 {
-
-private:
-    Contact contact[8];
-    int _freeSpot;
-    int _current_Contact;
-
-public:
-    PhoneBook();
-    void add_contact();
-    void display_contact();
-};
+    Zombie *new_zombie = new Zombie(name);
+    return(new_zombie);
+}

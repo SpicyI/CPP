@@ -1,10 +1,9 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++98
 
-NAME = Account
+NAME = 
 EXT = .cpp
 SRCDIR = .
-HEADERS = $(wildcard ./*.hpp);
 OBJDIR = obj
 OBJ_DIR= mkdir -p obj
 
@@ -17,10 +16,10 @@ DELOBJ = $(OBJ)
 all: $(NAME)
 
 
-$(NAME): $(OBJ) $(HEADERS)
+$(NAME): $(OBJ)
 	$(CC) $(CFLAGS) -o $@ $(OBJ) $(TH_FLAGS)
 
-$(OBJDIR)/%.o: $(SRCDIR)/%$(EXT) $(HEADERS)
+$(OBJDIR)/%.o: $(SRCDIR)/%$(EXT)
 	$(OBJ_DIR)
 	$(CC) $(CFLAGS) $(TH_FLAGS) -o $@ -c $<
 
