@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++98
 
-NAME = HORDE
+NAME = Game_Start
 EXT = .cpp
 SRCDIR = .
 HEADERS = $(wildcard ./*.hpp);
@@ -22,7 +22,7 @@ $(NAME): $(OBJ) $(HEADERS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT) $(HEADERS)
 	$(OBJ_DIR)
-	$(CC) $(CFLAGS) -I. -o $@ -c $<
+	$(CC) $(CFLAGS) -o $@ -c $<
 
 
 .PHONY: clean
