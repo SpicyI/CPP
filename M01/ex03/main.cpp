@@ -6,13 +6,17 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 17:37:15 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/06 17:37:20 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/06 21:39:56 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
+#include "Weapon.hpp"
+#include "HumanB.hpp"
+#include "HumanA.hpp"
+
+void startgame()
 {
-{
+    {
     Weapon club = Weapon("crude spiked club");
     HumanA bob("Bob", club);
     bob.attack();
@@ -27,5 +31,10 @@ int main()
     club.setType("some other type of club");
     jim.attack();
     }
+}
+int main()
+{
+    startgame();
+    system("leaks Game_Start");
     return 0;
 }
