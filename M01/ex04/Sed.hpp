@@ -1,26 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Sed.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 22:31:50 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/07 16:45:30 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/07 16:39:33 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/07 16:43:22 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#pragma once
 
-int main(int ac, char **av)
+#include <iostream>
+#include <string>
+#include <fstream>
+
+class Sed
 {
-    if (ac < 4 || ac > 4)
-    {
-        std::cout << "try ./losersed <filename> <string 1> <string 2> " << std::endl;
-        return 1;
-    }
-    Sed obj(av[1]);
-    if (obj.is_bad())
-        return(1);
-    obj.reader(av[2], av[3]);
-}
+private:
+    std::string line;;
+    std::ifstream infile;
+    std::ofstream outfile;
+    void replacer(const std::string& s1 , const std::string& s2);
+public:
+     bool is_bad();
+     void reader(std::string s1, std::string s2);
+     Sed(std::string file);
+     Sed();
+     ~Sed();
+};

@@ -1,26 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/06 22:31:50 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/07 16:45:30 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/07 17:16:20 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/07 17:19:42 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sed.hpp"
+#pragma once
 
-int main(int ac, char **av)
+#include <iostream>
+#include <string>
+
+class Harl
 {
-    if (ac < 4 || ac > 4)
-    {
-        std::cout << "try ./losersed <filename> <string 1> <string 2> " << std::endl;
-        return 1;
-    }
-    Sed obj(av[1]);
-    if (obj.is_bad())
-        return(1);
-    obj.reader(av[2], av[3]);
-}
+private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+
+public:
+    void complain(std::string level);
+    Harl();
+    ~Harl();
+};
