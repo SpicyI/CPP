@@ -1,22 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/07 18:36:30 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/07 20:28:29 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/07 17:16:20 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/07 17:19:42 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Harl.hpp"
+#pragma once
 
-int main(int ac, char **av)
+#include <iostream>
+#include <string>
+
+class Harl
 {
-    if (ac == 2)
-    {
-        Harl customer;
-        customer.complain(av[1]);
-    }
-}
+private:
+    void debug(void);
+    void info(void);
+    void warning(void);
+    void error(void);
+
+public:
+    void complain(std::string level);
+    Harl();
+    ~Harl();
+};

@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/07 17:20:05 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/07 20:28:18 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:27:56 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,38 +22,48 @@ Harl::~Harl()
 
 void Harl::debug(void)
 {
+    std::cout << "[ debug ]" << std::endl;
     std::cout << "you are now in the Debug Level" << std::endl;
 }
 
 void Harl::info(void)
 {
+    std::cout << "[ info ]" << std::endl;
     std::cout << "you are now in the Info Level" << std::endl;
 }
 
 void Harl::warning(void)
 {
+    std::cout << "[ warning ]" << std::endl;
     std::cout << "you are now in the Warning Level" << std::endl;
 }
 
 void Harl::error(void)
 {
+    std::cout << "[ error ]" << std::endl;
     std::cout << "you are now in the Error Level" << std::endl;
 }
 
 void Harl::complain(std::string level)
 {
-    void (Harl::*ptr[4])(void) = {&Harl::debug, &Harl::info, &Harl::warning, &Harl::error};
     std::string Lvls[4] = {"debug", "info", "warning", "error"};
-    int i = 0;
-    while (i < 4)
-    {
+    int i = -1;
+    while (++i < 4)
         if (level == Lvls[i])
-        {
-            (this->*ptr[i])();
             break;
-        }
-        i++;
+    switch (i)
+    {
+    case 0:
+        debug();
+    case 1:
+        info();
+    case 2:
+        warning();
+    case 3:
+        error();
+        break;
+    default:
+        std::cout << "[ hell ] \nYou've reached level Hell" << std::endl;
+        break;
     }
-    if (i == 4)
-        std::cout << "You've reached level Hell" << std::endl;
 }

@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/06 22:31:50 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/07 16:45:30 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/07 20:28:57 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int main(int ac, char **av)
     }
     Sed obj(av[1]);
     if (obj.is_bad())
-        return(1);
+        return (1);
     obj.reader(av[2], av[3]);
 }
