@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:48:28 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/09 23:57:11 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/10 00:39:15 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,22 @@ public:
     Fixed(const int number);
     Fixed(const float number);
     Fixed(const Fixed &other);
+    
     Fixed &operator=(const Fixed &other);
+    bool operator>(const Fixed &other);
+    bool operator<(const Fixed &other);
+    bool operator>=(const Fixed &other);
+    bool operator<=(const Fixed &other);
+    bool operator==(const Fixed &other);
+    bool operator!=(const Fixed &other);
+    Fixed &operator++();
+    
     int getRawBits(void) const;
     void setRawBits(int const raw);
+    
     float toFloat(void) const;
     int toInt(void) const;
+    
     ~Fixed();
 };
 
