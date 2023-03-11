@@ -6,11 +6,12 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 23:15:05 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/11 01:00:26 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/11 02:11:00 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Point.hpp"
+
 
 Fixed area(Point const p1, Point const p2, Point p3)
 {
@@ -27,11 +28,15 @@ Fixed area(Point const p1, Point const p2, Point p3)
 
 bool bsp( Point const a, Point const b, Point const c, Point const point)
 {
+
     Fixed area0 = area(a , b, c);
     Fixed area1 = area(a, b , point);
     Fixed area2 = area(a, c , point);
     Fixed area3 = area(b, c , point);
-
+    Fixed zero(0);
+    
+    if (area0 == zero || area1 == zero || area2 == zero || area3 == zero)
+        return false;    
     if (area0 == (area1 + area2 + area3))
         return true;
     else

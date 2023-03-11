@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/10 19:43:41 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/10 23:55:02 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/11 02:22:39 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,3 +31,4 @@ public:
 
 
 Fixed area(Point const p1, Point const p2, Point p3);
+bool bsp( Point const a, Point const b, Point const c, Point const point);
