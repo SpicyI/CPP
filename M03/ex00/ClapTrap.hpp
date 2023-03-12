@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:48:28 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/11 14:57:07 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/12 02:12:22 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/12 17:20:02 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include <iostream>
 
-class Fixed
+class ClapTrap
 {
 private:
-    int _fixed_p;
-    static const int _scaling_factor = 8;
-
+    std::string _Name;
+    unsigned int _HP , _Energy , _AD;
 public:
-    Fixed(void);
-    Fixed(const Fixed &other);
+    ClapTrap(void);
+    ClapTrap(std::string id);
+    ClapTrap(const ClapTrap &other);
 
-    Fixed &operator=(const Fixed &other);
-    
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
-    
-    ~Fixed();
+    ClapTrap &operator=(const ClapTrap &other);
+
+    void attack(const std::string & target);
+    void takeDamage(unsigned int amount);
+    void beRepaired(unsigned int amount);
+    ~ClapTrap();
 };

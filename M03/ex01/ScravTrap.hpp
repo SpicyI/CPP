@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/09 17:48:28 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/11 14:57:07 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/12 20:48:58 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/12 23:44:32 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class Fixed
+class ScravTrap : public ClapTrap
 {
-private:
-    int _fixed_p;
-    static const int _scaling_factor = 8;
-
 public:
-    Fixed(void);
-    Fixed(const Fixed &other);
+    ScravTrap(void);
+    ScravTrap(std::string& id);
+    ScravTrap(ScravTrap& other);
 
-    Fixed &operator=(const Fixed &other);
-    
-    int getRawBits(void) const;
-    void setRawBits(int const raw);
-    
-    ~Fixed();
+    void operator=(const ScravTrap &other);
+    void attack(std::string& target);
+    void guardGate();
+    ~ScravTrap();
 };
