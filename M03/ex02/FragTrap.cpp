@@ -1,66 +1,65 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.cpp                                      :+:      :+:    :+:   */
+/*   FragTrap.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 18:50:05 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 21:04:03 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/13 19:36:22 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/13 22:19:08 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "FragTrap.hpp"
 
-#include "ScravTrap.hpp"
-
-ScravTrap::ScravTrap(const std::string& id):ClapTrap(id)
+FragTrap::FragTrap(const std::string& id):ClapTrap(id)
 {
-    std::cout << "Scrav parametric contructor is called" << std::endl;
+    std::cout << "Frag parametric contructor is called" << std::endl;
     _HP = 100;
-    _AD = 20;
-    _Energy = 50;
+    _AD = 30;
+    _Energy = 100;
 }
 
-ScravTrap::ScravTrap():ClapTrap()
+FragTrap::FragTrap():ClapTrap()
 {
-    std::cout << "Scrav default contructor is called" << std::endl;
+    std::cout << "Frag default contructor is called" << std::endl;
     _HP = 100;
-    _AD = 20;
-    _Energy = 50;
+    _AD = 30;
+    _Energy = 100;
 }
 
-ScravTrap::ScravTrap(const ScravTrap& other): ClapTrap(other)
+FragTrap::FragTrap(const FragTrap& other): ClapTrap(other)
 {
-    std::cout << "Scrav copy contructor is called." << std::endl;
+    std::cout << "Frag copy contructor is called." << std::endl;
 }
 
 
-ScravTrap::~ScravTrap()
+FragTrap::~FragTrap()
 {
-    std::cout << "Scrav destructor is called" << std::endl;
+    std::cout << "Frag destructor is called" << std::endl;
 }
 
 /*          Operator   */
-ScravTrap& ScravTrap::operator=(const ScravTrap &other)
+FragTrap& FragTrap::operator=(const FragTrap &other)
 {
     if (this == &other)
         return *this;
     this->_Name = other._Name;
     this->_Energy = other._Energy;
     this->_HP = other._HP;
-    this->_AD = other._AD;
+    this->_AD = other._AD; 
     return *this;
 }
 
 /*  Memeber Func */
 
-void ScravTrap::attack(std::string& target)
+void FragTrap::attack(std::string& target)
 {
         if (this->_HP <= 0)
         std::cout << this->_Name << " has no HP." << std::endl; 
     else if (this->_Energy > 0)
     {
-        std::cout << "ScravTrap " << this->_Name << " attacks "
+        std::cout << "FragTrap " << this->_Name << " attacks "
             << target << ", causing " << this->_AD << " points of damage!" << std::endl;
         this->_Energy--;
     }
@@ -68,7 +67,7 @@ void ScravTrap::attack(std::string& target)
         std::cout << this->_Name <<" has no Energy." << std::endl;
 }
 
-void ScravTrap::guardGate()
+void FragTrap::highFivesGuys(void)
 {
-   std::cout << "ScravTrap " << this->_Name << " is now in Gate keeper mode" << std::endl;
+    std::cout << "FragTrap " << this->_Name << " is giving a High5." <<std::endl;
 }

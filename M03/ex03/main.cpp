@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 20:48:58 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 21:04:08 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/12 16:15:21 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/13 23:03:33 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "ScravTrap.hpp"
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
 
-class ScravTrap : public ClapTrap
+int main()
 {
-public:
-    ScravTrap(void);
-    ScravTrap(const std::string& id);
-    ScravTrap(const ScravTrap& other);
-
-    ScravTrap& operator=(const ScravTrap &other);
-    void attack(std::string& target);
-    void guardGate();
-    ~ScravTrap();
-};
+    DiamondTrap obj("spicy");
+}

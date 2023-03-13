@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   FragTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/12 20:48:58 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 21:04:08 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/13 19:35:42 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/13 22:19:02 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "ClapTrap.hpp"
 
-class ScravTrap : public ClapTrap
+class FragTrap : public ClapTrap
 {
 public:
-    ScravTrap(void);
-    ScravTrap(const std::string& id);
-    ScravTrap(const ScravTrap& other);
+    FragTrap(void);
+    FragTrap(const std::string& id);
+    FragTrap(const FragTrap& other);
 
-    ScravTrap& operator=(const ScravTrap &other);
+    FragTrap& operator=(const FragTrap &other);
     void attack(std::string& target);
-    void guardGate();
-    ~ScravTrap();
+    void highFivesGuys(void);
+    ~FragTrap();
 };

@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:19:43 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 20:58:00 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/13 21:05:39 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 /*      Contructors/Destrucors   */
 
-ClapTrap::ClapTrap(void): _Name("Random") , _HP(10) , _Energy(10), _AD(0)
+ClapTrap::ClapTrap(void): _Name(" Summoner") , _HP(10) , _Energy(10), _AD(0)
 {
     std::cout << "Default constructor is called." << std::endl;
 }
@@ -30,6 +30,11 @@ ClapTrap::ClapTrap(const ClapTrap &other)
     *this = other;
 }
 
+// ClapTrap::ClapTrap(std::string id, unsigned int HP , unsigned int AD, unsigned int ENERGY):
+// _Name(id) , _HP(HP) , _Energy(ENERGY), _AD(AD)
+// {
+//     std::cout << "Prametric constructor is called." << std::endl;
+// }
 
 ClapTrap::~ClapTrap()
 {
