@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++98 -fsanitize=address
 
-NAME = Serena
+NAME = ScravTrap
 EXT = .cpp
 SRCDIR = .
 HEADERS = $(wildcard ./*.hpp);

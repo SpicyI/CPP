@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:15:21 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 19:56:25 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:26:05 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,18 @@
 
 int main()
 {
-    std::string name = "Turret1";
-    std::string name1 = "no one";
-    
-    ScravTrap f(name);
-    ScravTrap f("rthfgh");
-    f.attack(name1);
-    ScravTrap a;
-    a.guardGate();
-    a = f;
-    a.attack(name1);
-    a.guardGate();
+    ScravTrap a("Jhon");
+    std::cout << std::endl;
+    ScravTrap b(a);
+    std::cout << std::endl;
+    ScravTrap c;
+    c = b;
+    std::cout << std::endl;
 
+    a.guardGate();
+    b.attack("Merry");
+    a.takeDamage(50);
+    a.beRepaired(50);
+    a.takeDamage(100);
+    a.beRepaired(10);
 }

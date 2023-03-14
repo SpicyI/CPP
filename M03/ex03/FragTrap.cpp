@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:36:22 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 21:25:42 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:36:23 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ FragTrap& FragTrap::operator=(const FragTrap &other)
 
 /*  Memeber Func */
 
-void FragTrap::attack(std::string& target)
+void FragTrap::attack(const std::string& target)
 {
         if (this->_HP <= 0)
         std::cout << this->_Name << " has no HP." << std::endl; 

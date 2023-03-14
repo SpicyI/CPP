@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 18:50:05 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 21:06:17 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/14 17:35:21 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ ScravTrap& ScravTrap::operator=(const ScravTrap &other)
 
 /*  Memeber Func */
 
-void ScravTrap::attack(std::string& target)
+void ScravTrap::attack(const std::string& target)
 {
         if (this->_HP <= 0)
         std::cout << this->_Name << " has no HP." << std::endl; 
