@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:19:43 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/13 20:58:00 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/15 00:13:26 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ void ClapTrap::beRepaired(unsigned int amount)
     else
     {
         this->_HP += amount;
+        this->_Energy -= 1;
         std::cout << this->_Name << " healed " << amount << " HP." << std::endl;
     }
 }
