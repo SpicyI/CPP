@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 16:58:37 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/15 19:42:09 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/15 23:38:16 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,6 @@ public:
     Animal& operator=(const Animal &other);
 
     std::string getType() const;
-    virtual void makesound();
-    ~Animal();
+    virtual void makeSound() const;
+    virtual ~Animal();
 };

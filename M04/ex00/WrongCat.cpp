@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 20:04:55 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/15 23:26:58 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/15 23:08:18 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/15 23:13:42 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat():  Animal()
+WrongCat::WrongCat():  WrongAnimal()
 {
-    type = "Cat";
-    std::cout << "Cat default constructor is called." << std::endl;
+    type = "WrongCat";
+    std::cout << "WrongCat default contructor is called." << std::endl;
 }
 
-Cat::Cat(const Cat& other): Animal(other)
+WrongCat::WrongCat(const WrongCat& other): WrongAnimal(other)
 {
-    std::cout << "Cat copy constructor is called." << std::endl;
+    std::cout << "WrongCat copy constructor is called." << std::endl;
 }
 
-Cat& Cat::operator=(const Cat& other)
+WrongCat& WrongCat::operator=(const WrongCat& other)
 {
     if (this != &other){
         this->type = other.getType();
@@ -31,12 +31,12 @@ Cat& Cat::operator=(const Cat& other)
     return *this;
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
     std::cout << this->type << " says meaaaaow." << std::endl;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-    std::cout << "Cat destructor is called." << std::endl;
+    std::cout << "WrongCat destructor is called." << std::endl;
 }
