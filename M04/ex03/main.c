@@ -6,10 +6,15 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 21:05:52 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 21:06:23 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/16 23:25:39 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+#include "MateriaSource.hpp"
+#include "Ice.hpp"
+#include "Cure.hpp"
+#include "Character.hpp"
 int main()
 {
     IMateriaSource* src = new MateriaSource();

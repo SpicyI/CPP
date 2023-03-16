@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:56:38 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 21:33:59 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/16 22:38:58 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,36 @@ Character::~Character()
     }
 }
 
+Character::Character(const std::string& name): _name(name)
+{
+    for(int i = 0; i < inventory_size ; i++)
+        inventory[i] = NULL;
+}
+
+Character::Character(const  Character& other)
+{
+    *this = other;
+    
+}
+
+Character& Character::operator=(const Character& other)
+{
+    if(this == &other)
+        return *this;
+    this->_name = other.getName();
+    for(int i = 0; i < inventory_size ; i++)
+    {
+        if (inventory[i])
+        {
+            delete inventory[i];
+            inventory[i] = NULL;
+        }
+        if (other.inventory[i])
+            inventory[i] = other.inventory[i]->clone();
+    }
+    return *this;
+    
+}
 /*                   member Func      */
 
 std::string const & Character::getName() const

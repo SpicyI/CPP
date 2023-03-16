@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 21:04:14 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 21:12:14 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/16 22:32:09 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@ private:
     AMateria *inventory[inventory_size];
 public:
     Character();
+    Character(const std::string& name);
+    Character(const Character& other);
+    Character& operator=(const Character& other);
     ~Character();
 
     std::string const & getName() const;
