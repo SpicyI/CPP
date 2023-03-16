@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 19:41:52 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 18:04:14 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:45:49 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,6 @@ Animal::Animal(const Animal &other)
 {
     std::cout << "Animal copy constructor is called." << std::endl;
     *this = other;
-}
-
-void Animal::makeSound() const
-{
-    std::cout << "Animal says AAAAAAAAAAAAAAAAAAAA." << std::endl;
 }
 
 Animal& Animal::operator=(const Animal &other)

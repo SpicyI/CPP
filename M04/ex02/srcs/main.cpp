@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/15 17:44:19 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 18:13:05 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/16 18:53:40 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,11 +56,17 @@ void test3()
 int main()
 {
     
+    // Animal dolphine; // this shouldn't work 
+    Animal* Tom = new Cat;
+    Tom->makeSound();
     std::cout << "* * * * * * * * * TEST1 * * * * * * * * *" << std::endl;
     test1();
     std::cout << "* * * * * * * * * TEST2 * * * * * * * * *" << std::endl;
     test2();
     std::cout << "* * * * * * * * * TEST3 * * * * * * * * *" << std::endl;
     test3();
+
+
+    
     system ("leaks Animal");
 }

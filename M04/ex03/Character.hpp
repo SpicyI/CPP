@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Animal.hpp                                         :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/15 16:58:37 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 18:45:34 by del-khay         ###   ########.fr       */
+/*   Created: 2023/03/16 21:04:14 by del-khay          #+#    #+#             */
+/*   Updated: 2023/03/16 21:12:14 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once 
-#include <iostream>
+#pragma once
+#include "ICharacter.hpp"
+#define inventory_size 4
 
-class Animal
+class Character
 {
-protected:
-    std::string type;
+private:
+    std::string _name;
+    AMateria *inventory[inventory_size];
 public:
-    Animal();
-    Animal(const Animal &other);
-    Animal& operator=(const Animal &other);
+    Character();
+    ~Character();
 
-    std::string getType() const;
-    virtual void makeSound() const = 0;
-    virtual ~Animal();
+    std::string const & getName() const;
+    void equip(AMateria* m);
+    void unequip(int idx);
+    void use(int idx, ICharacter& target);
 };
+
