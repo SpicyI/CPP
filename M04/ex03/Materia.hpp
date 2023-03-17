@@ -6,13 +6,16 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 19:00:41 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 21:03:44 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/17 01:10:28 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once 
+#ifndef MATERIA_HPP
+#define MATERIA_HPP
 #include <iostream>
 #include "ICharacter.hpp"
+#include "Character.hpp"
+class ICharacter;
 
 class AMateria
 {
@@ -29,3 +32,4 @@ public:
     virtual AMateria* clone() const = 0;
     virtual void use(ICharacter& target);
 };
+#endif

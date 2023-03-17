@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 21:05:52 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/16 23:25:39 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/17 01:48:21 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,14 @@
 #include "Ice.hpp"
 #include "Cure.hpp"
 #include "Character.hpp"
-int main()
+
+int dosmth()
 {
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
     ICharacter* me = new Character("me");
-    AMateria* tmp;
+    AMateria* tmp = NULL;
     tmp = src->createMateria("ice");
     me->equip(tmp);
     tmp = src->createMateria("cure");
@@ -29,8 +30,13 @@ int main()
     ICharacter* bob = new Character("bob");
     me->use(0, *bob);
     me->use(1, *bob);
+    me->unequip(0);
     delete bob;
     delete me;
     delete src;
-    return 0;
+    return 0;        
+}
+
+int main(){ dosmth();   
+system("leaks test");
 }

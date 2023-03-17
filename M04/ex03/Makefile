@@ -1,5 +1,5 @@
 CC = c++
-CFLAGS =  -Wall -Werror -Wextra -std=c++98
+CFLAGS =  -Wall -Werror -Wextra -std=c++98 
 
 NAME = test
 EXT = .cpp
@@ -22,7 +22,7 @@ $(NAME): $(OBJ) $(HEADERS)
 
 $(OBJDIR)/%.o: $(SRCDIR)/%$(EXT) $(HEADERS)
 	$(OBJ_DIR)
-	$(CC) $(CFLAGS) -o $@ -c $<
+	$(CC) -I . $(CFLAGS) -o $@ -c $<
 
 
 .PHONY: clean
