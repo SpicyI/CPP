@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 21:04:14 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/17 01:26:47 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:06:56 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     Character& operator=(const Character& other);
     ~Character();
 
+    AMateria* getMateria(int idx);
     std::string const & getName() const;
     void equip(AMateria* m);
     void unequip(int idx);

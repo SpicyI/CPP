@@ -1,7 +1,7 @@
 CC = c++
-CFLAGS =  -Wall -Werror -Wextra -std=c++98 
+CFLAGS =  -Wall -Werror -Wextra -std=c++98
 
-NAME = test
+NAME = Stuff
 EXT = .cpp
 SRCDIR = .
 HEADERS = $(wildcard ./*.hpp);

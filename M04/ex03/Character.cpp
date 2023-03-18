@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:56:38 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/17 01:46:02 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:08:07 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,8 @@ void Character::unequip(int idx)
 {
     if (idx < 0 || idx >= inventory_size)
         return ;
-    // AMateria *detach = this->inventory[idx];
     // delete inventory[idx];
     this->inventory[idx] = NULL;
-    // add detach to the floor to be deleted later;
     
 }
 
@@ -97,4 +95,11 @@ void Character::use(int idx, ICharacter& target)
     {
         this->inventory[idx]->use(target);
     }
+}
+
+AMateria* Character::getMateria(int idx)
+{
+    if (idx < 0 || idx >= inventory_size)
+        return  0;
+    return(inventory[idx]);
 }

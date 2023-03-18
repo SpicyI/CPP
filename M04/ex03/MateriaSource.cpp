@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 23:03:24 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/17 01:44:30 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:31:04 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,8 @@ void    MateriaSource::learnMateria(AMateria* m)
         i++;
     if (i == memory_size)
     {
-        delete m;
+        if (m)
+            delete m;
         return ; // can't be added to the memry cause it's full
     }
     if (m)

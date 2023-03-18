@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 20:53:46 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/17 01:12:45 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/03/17 16:26:08 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,9 @@ AMateria* Cure::clone() const
 
 void Cure::use(ICharacter& target)
 {
+
+    ICharacter *nullChar = 0;
+    if (&target == nullChar)
+        return;
     std::cout<<"* heals " << target.getName() <<"'s wounds *" << std::endl;
 }
