@@ -6,20 +6,20 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:15:21 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/14 17:26:05 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:30:40 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 #include "ClapTrap.hpp"
 
 int main()
 {
-    ScravTrap a("Jhon");
+    ScavTrap a("Jhon");
     std::cout << std::endl;
-    ScravTrap b(a);
+    ScavTrap b(a);
     std::cout << std::endl;
-    ScravTrap c;
+    ScavTrap c;
     c = b;
     std::cout << std::endl;
 

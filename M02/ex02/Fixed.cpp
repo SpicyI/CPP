@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 18:17:30 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/10 19:39:35 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:32:07 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,9 +121,10 @@ Fixed Fixed::operator-(const Fixed &other) const
     return (resault);
 }
 
-Fixed& Fixed::operator-()
+Fixed Fixed::operator-()
 {
-    this->_fixed_p *= -1;
+    Fixed negative;
+    negative._fixed_p = this->_fixed_p * -1;
     return (*this);
 }
 

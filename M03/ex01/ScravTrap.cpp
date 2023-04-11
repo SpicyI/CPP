@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.cpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,9 +11,9 @@
 /* ************************************************************************** */
 
 
-#include "ScravTrap.hpp"
+#include "ScavTrap.hpp"
 
-ScravTrap::ScravTrap(const std::string& id):ClapTrap(id)
+ScavTrap::ScavTrap(const std::string& id):ClapTrap(id)
 {
     std::cout << "Scrav parametric contructor is called" << std::endl;
     _HP = 100;
@@ -21,7 +21,7 @@ ScravTrap::ScravTrap(const std::string& id):ClapTrap(id)
     _Energy = 50;
 }
 
-ScravTrap::ScravTrap():ClapTrap()
+ScavTrap::ScavTrap():ClapTrap()
 {
     std::cout << "Scrav default contructor is called" << std::endl;
     _HP = 100;
@@ -29,19 +29,19 @@ ScravTrap::ScravTrap():ClapTrap()
     _Energy = 50;
 }
 
-ScravTrap::ScravTrap(const ScravTrap& other): ClapTrap(other)
+ScavTrap::ScavTrap(const ScavTrap& other): ClapTrap(other)
 {
     std::cout << "Scrav copy contructor is called." << std::endl;
 }
 
 
-ScravTrap::~ScravTrap()
+ScavTrap::~ScavTrap()
 {
     std::cout << "Scrav destructor is called" << std::endl;
 }
 
 /*          Operator   */
-ScravTrap& ScravTrap::operator=(const ScravTrap &other)
+ScavTrap& ScavTrap::operator=(const ScavTrap &other)
 {
     if (this == &other)
         return *this;
@@ -54,13 +54,13 @@ ScravTrap& ScravTrap::operator=(const ScravTrap &other)
 
 /*  Memeber Func */
 
-void ScravTrap::attack(const std::string& target)
+void ScavTrap::attack(const std::string& target)
 {
     if (this->_HP <= 0)
         std::cout << this->_Name << " has no HP." << std::endl; 
     else if (this->_Energy > 0)
     {
-        std::cout << "ScravTrap " << this->_Name << " attacks "
+        std::cout << "ScavTrap " << this->_Name << " attacks "
             << target << ", causing " << this->_AD << " points of damage!" << std::endl;
         this->_Energy--;
     }
@@ -68,7 +68,7 @@ void ScravTrap::attack(const std::string& target)
         std::cout << this->_Name <<" has no Energy." << std::endl;
 }
 
-void ScravTrap::guardGate()
+void ScavTrap::guardGate()
 {
-   std::cout << "ScravTrap " << this->_Name << " is now in Gate keeper mode" << std::endl;
+   std::cout << "ScavTrap " << this->_Name << " is now in Gate keeper mode" << std::endl;
 }

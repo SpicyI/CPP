@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/09 17:48:28 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/10 17:29:33 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:31:15 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ public:
     Fixed operator--(int);
     Fixed operator+(const Fixed &other) const;
     Fixed operator-(const Fixed &other) const;
-    Fixed& operator-();
+    Fixed operator-();
     Fixed operator*(const Fixed &other) const;
     Fixed operator/(const Fixed &other) const;
     bool operator>(const Fixed &other) const;

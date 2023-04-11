@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ScravTrap.hpp                                      :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,15 +13,15 @@
 #pragma once
 #include "ClapTrap.hpp"
 
-class ScravTrap : public ClapTrap
+class ScavTrap : public ClapTrap
 {
 public:
-    ScravTrap(void);
-    ScravTrap(const std::string& id);
-    ScravTrap(const ScravTrap& other);
+    ScavTrap(void);
+    ScavTrap(const std::string& id);
+    ScavTrap(const ScavTrap& other);
 
-    ScravTrap& operator=(const ScravTrap &other);
+    ScavTrap& operator=(const ScavTrap &other);
     void attack(const std::string& target);
     void guardGate();
-    ~ScravTrap();
+    ~ScavTrap();
 };

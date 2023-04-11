@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:59:03 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/14 18:25:35 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/11 21:30:40 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), _Name("Random")
 }
 
 DiamondTrap::DiamondTrap(const std::string &id):
-ClapTrap(id + "_clap_name"), ScravTrap(id) , FragTrap(id)
+ClapTrap(id + "_clap_name"), ScavTrap(id) , FragTrap(id)
 {
     std::cout << "Diamond parametric constructor is called." << std::endl;
     DiamondTrap::_Name = id;
@@ -29,7 +29,7 @@ ClapTrap(id + "_clap_name"), ScravTrap(id) , FragTrap(id)
 }
 
 DiamondTrap::DiamondTrap(const DiamondTrap &other):
-    ClapTrap(other), ScravTrap(other), FragTrap(other) ,_Name(other._Name)
+    ClapTrap(other), ScavTrap(other), FragTrap(other) ,_Name(other._Name)
 {
     std::cout << "Diamond copy constructor is called." << std::endl;
     this->_Energy = 50;
@@ -45,7 +45,7 @@ DiamondTrap::~DiamondTrap()
 
 void DiamondTrap::attack(const std::string &tagret)
 {
-    ScravTrap::attack(tagret);
+    ScavTrap::attack(tagret);
 }
 
 void DiamondTrap::whoAmI()
