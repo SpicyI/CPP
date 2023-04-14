@@ -15,7 +15,7 @@
 
 ScavTrap::ScavTrap(const std::string& id):ClapTrap(id)
 {
-    std::cout << "Scrav parametric contructor is called" << std::endl;
+    std::cout << "Scrav Parameterized contructor is called" << std::endl;
     _HP = 100;
     _AD = 20;
     _Energy = 50;

@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 19:36:22 by del-khay          #+#    #+#             */
-/*   Updated: 2023/03/14 17:36:23 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:17:49 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 FragTrap::FragTrap(const std::string& id):ClapTrap(id)
 {
-    std::cout << "Frag parametric contructor is called" << std::endl;
+    std::cout << "Frag Parameterized contructor is called" << std::endl;
     _HP = 100;
     _AD = 30;
     _Energy = 100;

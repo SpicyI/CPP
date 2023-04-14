@@ -1,0 +1,52 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/13 00:27:59 by del-khay          #+#    #+#             */
+/*   Updated: 2023/04/13 05:20:39 by del-khay         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#pragma  once 
+#include <iostream>
+#include <exception>
+#include <string>
+#include "Form.hpp"
+
+class Form;
+
+class Bureaucrat
+{
+private:
+	const std::string	name;
+	unsigned short		grade;
+	Bureaucrat(void);
+public:
+	class GradeTooHighException : public std::exception
+	{
+		const char* what() const throw();
+	};
+
+	class GradeTooLowException : public std::exception
+	{
+			const char* what() const throw();
+	};
+
+	Bureaucrat(const Bureaucrat &other);
+	Bureaucrat(const std::string &id, const int &rank);
+	~Bureaucrat();
+	std::string getName() const;
+	unsigned short getGrade() const;
+	void promote();
+	void demote();
+	void signForm(Form& paper_work);
+	Bureaucrat& operator=(const Bureaucrat &other);
+};
+
+std::ostream& operator<<(std::ostream& stream ,const Bureaucrat& employee);
+
+
+

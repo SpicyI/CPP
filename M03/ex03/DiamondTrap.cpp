@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 21:59:03 by del-khay          #+#    #+#             */
-/*   Updated: 2023/04/11 21:30:40 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/12 20:17:49 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ DiamondTrap::DiamondTrap(): ClapTrap(), _Name("Random")
 DiamondTrap::DiamondTrap(const std::string &id):
 ClapTrap(id + "_clap_name"), ScavTrap(id) , FragTrap(id)
 {
-    std::cout << "Diamond parametric constructor is called." << std::endl;
+    std::cout << "Diamond Parameterized constructor is called." << std::endl;
     DiamondTrap::_Name = id;
     this->_Energy = 50;
 }
