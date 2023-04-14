@@ -6,7 +6,7 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/13 00:28:08 by del-khay          #+#    #+#             */
-/*   Updated: 2023/04/14 20:54:02 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/04/14 22:05:56 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,46 +14,45 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
+
 void test1()
 {
-	ShrubberyCreationForm form1("490");
-	Bureaucrat Joe("Joe" , 130);
-	Bureaucrat Moe("Moe" , 140);
-	std::cout << std::endl;
-	Moe.signForm(form1);
-	Moe.executeForm(form1);
-	Joe.executeForm(form1);
-	std::cout << std::endl;
+	Intern nobody;
+	AForm *form1;
+	form1 = nobody.makeForm("RobotomyRequest", "quark");
+	if (form1)
+	{
+		std::cout << *form1 << std::endl;
+		delete form1;
+	}
 }
 
-void	test2()
+void test2()
 {
-	RobotomyRequestForm form2("164");
-	RobotomyRequestForm form1(form2);
-	Bureaucrat Rick("Rick" , 75);
-	Bureaucrat May("May" , 130);
-	Bureaucrat Kim("Kim", 40);
-	std::cout << std::endl;
-	May.signForm(form1);
-	May.executeForm(form1);
-	Rick.executeForm(form1);
-	Kim.signForm(form1);
-	Kim.executeForm(form1);
-	std::cout << std::endl;
+	Intern nobody;
+	AForm *form1;
+	form1 = nobody.makeForm("noType", "quark");
+	if (form1)
+	{
+		std::cout << *form1 << std::endl;
+		delete form1;
+	}
 }
 
-void	test3()
+void test3()
 {
-	PresidentialPardonForm form1("hamdallah");
-	PresidentialPardonForm form2("okdoki");
-	form1 = form2;
-	Bureaucrat kally("Kally" , 1);
-	std::cout << std::endl;
-	kally.executeForm(form1);
-	kally.signForm(form1);
-	kally.executeForm(form1);
-	std::cout << std::endl;
-	
+	Intern nobody;
+	AForm *form1;
+	form1 = nobody.makeForm("ShrubberyCreation", "quark");
+	Bureaucrat keven("keven", 1);
+	if (form1)
+	{
+		std::cout << *form1 << std::endl;
+		keven.signForm(*form1);
+		keven.executeForm(*form1);
+		delete form1;
+	}
 }
 
 int main(void)
