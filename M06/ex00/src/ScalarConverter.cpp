@@ -8,9 +8,18 @@ double ScalarConverter::_d = 0;
 ScalarConverter::ScalarConverter()
 {
 }
+ScalarConverter::ScalarConverter(const ScalarConverter &other)
+{
+	static_cast<void>(other);
+}
 
 ScalarConverter::~ScalarConverter()
 {
+}
+
+void ScalarConverter::operator=(const ScalarConverter &other)
+{
+	static_cast<void>(other);
 }
 
 bool is_anumber(const std::string &str)
@@ -83,17 +92,14 @@ int ScalarConverter::is_int(std::string const &data)
 {
 	if (!is_anumber(data))
 		return 0;
-	try
-	{
-		_i = stoi(data);
-		_c = static_cast<char>(_i);
-		_f = static_cast<float>(_i);
-		_d = static_cast<double>(_i);
-	}
-	catch (const std::exception &e)
-	{
-		return 0;
-	}
+
+	long long test = atol(data.c_str());
+	if (test > INT_MAX || test < INT_MIN)
+		return (0);
+	_i = static_cast<int>(test);
+	_c = static_cast<char>(_i);
+	_f = static_cast<float>(_i);
+	_d = static_cast<double>(_i);
 
 	if (_i > CHAR_MAX || CHAR_MIN > _i)
 		std::cout << "char: Impossible" << std::endl;
@@ -111,17 +117,12 @@ int ScalarConverter::is_double(std::string const &data)
 {
 	if (!is_adoublenbr(data))
 		return 0;
-	try
-	{
-		_d = stod(data);
-		_i = static_cast<int>(_d);
-		_f = static_cast<float>(_d);
-		_c = static_cast<char>(_d);
-	}
-	catch (const std::exception &e)
-	{
-		return 0;
-	}
+
+	_d = atof(data.c_str());
+	_i = static_cast<int>(_d);
+	_f = static_cast<float>(_d);
+	_c = static_cast<char>(_d);
+
 	if (_d > CHAR_MAX || CHAR_MIN > _d || std::isnan(_d) || std::isinf(_d))
 		std::cout << "char: Impossible" << std::endl;
 	else if (!isprint(_c))
@@ -134,7 +135,7 @@ int ScalarConverter::is_double(std::string const &data)
 		std::cout << "int: " << _i << std::endl;
 	if (std::fmod(_d, 1.0) == 0.0)
 		std::cout << std::fixed << std::setprecision(1);
-	std::cout << std::fixed  << "float: " << _f << 'f' << std::endl;
+	std::cout << std::fixed << "float: " << _f << 'f' << std::endl;
 	std::cout << "double: " << _d << std::endl;
 	return 1;
 }
@@ -143,17 +144,11 @@ int ScalarConverter::is_float(std::string const &data)
 {
 	if (!is_afloatnbr(data))
 		return 0;
-	try
-	{
-		_f = stof(data);
-		_i = static_cast<int>(_f);
-		_d = static_cast<double>(_f);
-		_c = static_cast<char>(_f);
-	}
-	catch (const std::exception &e)
-	{
-		return 0;
-	}
+
+	_f = atof(data.c_str());
+	_i = static_cast<int>(_f);
+	_d = static_cast<double>(_f);
+	_c = static_cast<char>(_f);
 
 	if (_f > CHAR_MAX || CHAR_MIN > _f || std::isnan(_f) || std::isinf(_f))
 		std::cout << "char: Impossible" << std::endl;
@@ -188,7 +183,7 @@ int ScalarConverter::is_char(std::string const &data)
 			std::cout << "char: Non displayable" << std::endl;
 
 		std::cout << "int: " << _i << std::endl;
-		std::cout << "float: " << _f << 'f' << std::endl;
+		std::cout << std::fixed << std::setprecision(1) << "float: " << _f << 'f' << std::endl;
 		std::cout << "double: " << _d << std::endl;
 		return 1;
 	}
@@ -198,13 +193,11 @@ int ScalarConverter::is_char(std::string const &data)
 void ScalarConverter::convert(std::string const &data)
 {
 	if (is_float(data))
-	{
-		return (static_cast<void>(printf("float\n")));
-	}
+		return;
 	if (is_int(data))
-		return ((void)printf("int\n"));
+		return;
 	if (is_double(data))
-		return ((void)printf("dbl\n"));
+		return;
 	if (is_char(data))
-		return ((void)printf("char\n"));
+		return;
 }
