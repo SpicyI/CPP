@@ -61,9 +61,11 @@ void testArrayClass2()
 
 int main()
 {
+    std::cout << "- - - - - - - test 1 - - - - - - - - -" << std::endl;
     testArrayClass();
-    std::cout << "- - - - - - - - - - - - - - - -" << std::endl;
+    std::cout << "\n- - - - - - - test 2 - - - - - - - - -" << std::endl;
     testArrayClass2();
+    std::cout << "- - - - - - - - - - - - - - - -" << std::endl;
 
 	// system("leaks Array");
     return 0;
