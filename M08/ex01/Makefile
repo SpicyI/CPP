@@ -1,7 +1,7 @@
 CC = c++
 CFLAGS =  -Wall -Werror -Wextra -std=c++98
 
-NAME = easyfind
+NAME = Span
 EXT = .cpp
 SRCDIR = ./src
 HEADERS = $(wildcard ./*.hpp);
