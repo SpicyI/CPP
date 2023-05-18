@@ -11,7 +11,30 @@ int main(void)
     l.push_back(i);
     v.push_back(i);
   }
-	std::cout << easyfind(d , 5) << std::endl;
-	easyfind(l , 10);
-	easyfind(v , 10);
+  try
+  {
+	  std::cout << easyfind(d , 5) << std::endl;
+  }
+  catch(std::exception &e)
+  {
+    std::cout << "Exception caught: " << e.what() << std::endl;
+  }
+
+  try
+  {
+	  std::cout << easyfind(l , 10) << std::endl;
+  }
+  catch(std::exception &e)
+  {
+    std::cout << "Exception caught: " << e.what() << std::endl;
+  }
+
+  try
+  {
+	  std::cout << easyfind(v , -1) << std::endl;
+  }
+  catch(std::exception &e)
+  {
+    std::cout << "Exception caught: " << e.what() << std::endl;
+  }
 }

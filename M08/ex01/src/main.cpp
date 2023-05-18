@@ -8,8 +8,11 @@ void test_normal(void) {
   sp.addNumber(17);
   sp.addNumber(9);
   sp.addNumber(11);
-  std::cout << sp.shortestSpan() << std::endl;
-  std::cout << sp.longestSpan() << std::endl;
+  Span s(0);
+  s = sp;
+  // s.addNumber(5);
+  std::cout << s.shortestSpan() << std::endl;
+  std::cout << s.longestSpan() << std::endl;
 }
 
 void test_max(void) {
@@ -27,7 +30,7 @@ void test_container_range(void) {
 
   for (int i = 1 ; i < 10 ; i++)
     v.push_back(i * 3);
-  sp.insertNumbers(std::begin(v), std::end(v));
+  sp.insertNumbers(v.begin(), v.end());
   std::cout << sp.shortestSpan() << std::endl;
   std::cout << sp.longestSpan() << std::endl;
 }
@@ -72,18 +75,36 @@ void test_no_store(void) {
   }
 }
 
+void test_const()
+{
+  const std::vector<int> container(5, 10);
+  Span sp(5);
+  try
+  {
+    sp.insertNumbers(container.cbegin(), container.cend());
+  }
+  catch(const std::exception& e)
+  {
+    std::cerr << e.what() << '\n';
+  }
+  
+}
+
 int main(void) {
+  
+  std::cout <<  "----- Normal test -----"<< std::endl;
   test_normal();
-  std::cout << std::endl;
+  std::cout << "----- 10,000 spans -----"<<std::endl;
   test_max();
-  std::cout << std::endl;
+  std::cout << "----- Container adding -----" <<std::endl;
   test_container_range();
-  std::cout << std::endl;
+  std::cout<< "----- Array range -----"<< std::endl;
   test_array_range();
-  std::cout << std::endl;
+  std::cout << "----- Empty span -----"<<std::endl;
   test_no_span();
-  std::cout << std::endl;
+  std::cout << "----- Add to empry span -----"<<std::endl;
   test_no_store();
   std::cout << std::endl;
+  // test_const();
   return 0;
 }

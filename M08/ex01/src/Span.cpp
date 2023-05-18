@@ -10,6 +10,19 @@ Span::~Span()
 {
 }
 
+Span::Span(const Span &other_span):data_set(other_span.data_set)
+{
+
+}
+
+Span& Span::operator=(const Span & other_span)
+{
+	if (this != &other_span)
+		data_set = other_span.data_set;
+	return *this;
+}
+
+
 void Span::addNumber(int n)
 {
 	if(data_set.size() >= data_set.capacity() && data_set.size() != 0)
@@ -51,5 +64,5 @@ int Span::longestSpan()
 	
 	std::sort(data_set.begin(), data_set.end());
 
-	return data_set.end() - data_set.begin();
+	return *(data_set.end() - 1) - *(data_set.begin());
 }

@@ -2,18 +2,26 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
+#include <exception>
 #include <vector>
 #include <queue>
 #include <list>
 
+class Not_found: public std::exception
+{
+	const char* what() const throw()
+	{
+		return "Container has no such value";
+	}
+};
+
+
 
 template <typename T>
-int  easyfind(T &container, int value)
+int  easyfind(const T &container, int value)
 {
-	typename T::iterator iter =  std::find(container.begin(), container.end(), value);
-	if (iter == container.end())
-		std::cout << "value not found" << std::endl;
-	else
-		return *iter;
-	return 0;
+	typename T::const_iterator iter =  std::find(container.cbegin(), container.cend(), value);
+	if (iter == container.cend())
+		throw Not_found();
+	return *iter;
 }
