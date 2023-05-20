@@ -6,11 +6,11 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/12 16:15:21 by del-khay          #+#    #+#             */
-/*   Updated: 2023/04/11 21:30:40 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/05/19 18:16:02 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "ScravTrap.hpp"
 #include "ClapTrap.hpp"
 #include "FragTrap.hpp"
 #include "DiamondTrap.hpp"

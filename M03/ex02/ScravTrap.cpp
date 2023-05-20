@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 
-#include "ScavTrap.hpp"
+#include "SrcavTrap.hpp"
 
 ScavTrap::ScavTrap(const std::string& id):ClapTrap(id)
 {

@@ -6,13 +6,13 @@
 /*   By: del-khay <del-khay@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/13 22:26:58 by del-khay          #+#    #+#             */
-/*   Updated: 2023/04/11 21:30:40 by del-khay         ###   ########.fr       */
+/*   Updated: 2023/05/19 18:15:12 by del-khay         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #pragma once
 #include "FragTrap.hpp"
-#include "ScavTrap.hpp"
+#include "ScravTrap.hpp"
 
 class DiamondTrap : public ScavTrap, public FragTrap
 {
