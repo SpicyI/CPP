@@ -58,7 +58,9 @@ void RPN::calculate(std::string expression)
 			Rpn_push(token);
 		token.clear();
 	}
-	if (this->_stack.size() != 1)
+	if (!this->_stack.size())
+		throw std::invalid_argument("stack is empty");
+	else if (this->_stack.size() != 1)
 		throw std::invalid_argument("stack has more than 1 element");
 	ss.clear();
 	std::cout << this->_stack.top() << std::endl;
@@ -68,7 +70,7 @@ void RPN::Rpn_push(std::string& token)
 {
 	char *endptr = 0;
 	int value = static_cast<int> (std::strtol(token.c_str(), &endptr, 10));
-	if (*endptr != '\0')
+	if (*endptr != '\0' || value >= 10 || !token.size())
 		throw std::invalid_argument("");
 	this->_stack.push(value);
 }

@@ -52,10 +52,8 @@ int main(int ac , char **av)
 
 	std::getline(input, line);
 	if (line != "date | value")
-	{
-		 std::cout <<"Invalid Header => " + line << std::endl;
-		 return 1;
-	}
+		 std::cout <<"Invalid or messing Header in input file." << std::endl;
+
 	while (std::getline(input, line))
 	{
 		std::stringstream ss(line);
@@ -63,9 +61,10 @@ int main(int ac , char **av)
 
 		std::getline(ss, date_str, '|');
 		std::getline(ss, amount, '|');
-		if(ss.eof() == false)
+		// std::cout << amount.size() << std::endl;
+		if(ss.eof() == false || date_str.size() != 11 || amount.size() == 0 || amount[0] != ' ')
 		{
-			 std::cout << "bad input => " + line << std::endl;
+			 std::cout << "Error: bad input => " + line << std::endl;
 			 continue;
 		}
 		try

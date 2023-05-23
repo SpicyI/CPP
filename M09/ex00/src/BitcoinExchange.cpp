@@ -8,7 +8,7 @@ double BitcoinExchange::retrieve_exchange_rate(std::string &exchange_rate_str)
 	
 	trimstr(exchange_rate_str);
 	double exchange_rate = std::strtod(exchange_rate_str.c_str(), &endptr);
-	if (*endptr != 0)
+	if (*endptr != 0 || exchange_rate_str.empty())
 		throw std::invalid_argument("bad input => " + exchange_rate_str);
 	if (exchange_rate > 1000)
 		throw std::invalid_argument("too large a number.");
@@ -37,7 +37,7 @@ BitcoinExchange::BitcoinExchange(std::istream& db_csv)
 
 	std::getline(db_csv, line);
 	if (line != "date,exchange_rate")
-		throw std::invalid_argument("Invalid or messing Header" + line);
+		throw std::invalid_argument("Invalid or messing Header in database.");
 
 	while (std::getline(db_csv, line))
 	{

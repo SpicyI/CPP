@@ -6,7 +6,7 @@
 #include <vector>
 #include <deque>
 #include <string>
-#include <time.h>
+#include <ctime>
 #include <limits.h>
 # define K  10
 class PmergeMe
