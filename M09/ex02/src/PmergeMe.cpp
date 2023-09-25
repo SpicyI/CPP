@@ -18,6 +18,7 @@ PmergeMe& PmergeMe::operator=(const PmergeMe& other)
 	if (this != &other)
 	{
 		this->_deque = other._deque;
+		this->_vector = other._vector;
 	}
 	return *this;
 }
